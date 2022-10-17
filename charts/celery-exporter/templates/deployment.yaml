@@ -39,6 +39,10 @@ spec:
             httpGet:
               path: /health
               port: http
+          livenessProbe:
+            httpGet:
+              path: /metrics
+              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.env }}
