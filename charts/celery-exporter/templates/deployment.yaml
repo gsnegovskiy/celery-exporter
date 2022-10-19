@@ -40,6 +40,8 @@ spec:
               path: /health
               port: http
           livenessProbe:
+            failureThreshold: 10
+            periodSeconds: 30
             httpGet:
               path: /metrics
               port: http
